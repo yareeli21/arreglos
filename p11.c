@@ -77,3 +77,49 @@ void Mensajes(int msg){
 
 	printf("%s",mensaje[msg]);
 }
+
+// Función para ingresar elementos al vector
+void ingresarElementos(int *vector, int n) {
+    printf("Ingrese los elementos del vector:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%d", &vector[i]);
+    }
+}
+
+// Función para ordenar el vector en orden creciente (burbuja)
+void ordenarCreciente(int *vector, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (vector[j] > vector[j + 1]) {
+                // Intercambiar los elementos si están en el orden incorrecto
+                int temp = vector[j];
+                vector[j] = vector[j + 1];
+                vector[j + 1] = temp;
+            }
+        }
+    }
+}
+
+// Función para ordenar el vector en orden decreciente (burbuja)
+void ordenarDecreciente(int *vector, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (vector[j] < vector[j + 1]) {
+                // Intercambiar los elementos si están en el orden incorrecto
+                int temp = vector[j];
+                vector[j] = vector[j + 1];
+                vector[j + 1] = temp;
+            }
+        }
+    }
+}
+
+// Función para mostrar los elementos del vector
+void mostrarElementos(int *vector, int n) {
+    printf("Elementos del vector:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", vector[i]);
+    }
+    printf("\n");
+}
